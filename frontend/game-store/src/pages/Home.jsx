@@ -6,6 +6,9 @@ import bannerInformatica from '../assets/banner-informatica.jpg'
 import tecladoImage from '../assets/teclado.png'
 import Highlight from '../components/Highlight'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+
 const Home = () => {
     const [games, setGames] = useState();
     const [lancamentos, setLancamentos] = useState();
@@ -123,8 +126,8 @@ const Home = () => {
                     backgroundImage: `url(${bannerInformatica})`
                 }}>Conheça nossa informática</h2>
 
-                <div className='p-3'>
-                    <div>
+                <div >
+                    <div className='p-3'>
                         <h3 className='text-lg my-3'>
                             Somente os melhores
                         </h3>
@@ -133,10 +136,19 @@ const Home = () => {
                         </p>
                     </div>
 
-                    <div className='border-1 rounded-md '>
-                        <h2 className='text-xl uppercase'>Cougar</h2>
-                        <img src={tecladoImage} className='rotate-350' alt="imagem de teclado" />
+                    <div className='border-1 rounded-md flex flex-col justify-center items-center w-10/12 mx-auto my-5 '>
+                        <h2 className='text-xl uppercase tracking-[.5rem]'>Cougar</h2>
+                        <img src={tecladoImage} alt="imagem de teclado" />
+                        <div className='my-2'>
+                        {[...Array(5)].map((_, i) => {
+                            return <span key={i} className='text-yellow-500 text-xl'><FontAwesomeIcon icon={faStar} /></span>
+                        })}
+                        </div>
                     </div>
+                    <Highlight
+                    title={null}
+                    items={games}
+                    />
                 </div>
         </section>
     </> : ''

@@ -1,14 +1,13 @@
-import React from 'react'
-
 const Highlight = ({title, items}) => {
   return (
     <div className='w-screen overflow-hidden'>
-        <div className='flex items-center py-5 px-2 w-full'>
+
+        {title && <div className='flex items-center py-5 px-2 w-full'>
             <div className='flex-1 h-0.5 bg-secondary'></div>
             <h1 className='px-2 tracking-widest uppercase'>{title}</h1>
               <div className='flex-1 h-0.5 bg-secondary'></div>
 
-        </div>
+        </div>}
           <ul className='flex w-full overflow-x-scroll snap-x'>    
         {items.map((item)=> {
             return <li key={item.id} className='p-3 min-w-10/12 max-h-55 snap-start overflow-y-hidden'>
