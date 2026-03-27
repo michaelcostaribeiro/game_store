@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import crashImage from '../assets/banner-1-crash.png'
 import promotionImage from '../assets/banner-promotion.jpg'
 import promotionImageSmall from '../assets/banner-promotion-small.jpg'
+import bannerInformatica from '../assets/banner-informatica.jpg'
+import tecladoImage from '../assets/teclado.png'
 import Highlight from '../components/Highlight'
 
 const Home = () => {
@@ -88,7 +90,7 @@ const Home = () => {
 
 
 
-            <section className='pacote flex-col flex justify-center  h-screen text-white gap-2 
+        <section className='pacote flex-col flex justify-center  h-screen text-white gap-2 
             bg-position-[70%]
             bg-no-repeat 
             bg-cover' style={{
@@ -114,6 +116,28 @@ const Home = () => {
                 <p>Jogos da semana</p>
                 <p>R$ 19,90</p>
             </div>
+        </section>
+
+        <section>
+                <h2 className='uppercase text-white font-bold text-xl h-20 mt-10 flex justify-center items-center mx-3 rounded-2xl text-shadow-lg ' style={{
+                    backgroundImage: `url(${bannerInformatica})`
+                }}>Conheça nossa informática</h2>
+
+                <div className='p-3'>
+                    <div>
+                        <h3 className='text-lg my-3'>
+                            Somente os melhores
+                        </h3>
+                        <p className='text-sm'>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet pharetra nibh. Aenean venenatis felis ut tortor fermentum, ut tincidunt nisi commodo. Proin in metus at purus ornare ornare sed ut lacus. Fusce ut faucibus turpis. Praesent sollicitudin iaculis tincidunt. Nam metus turpis, tempor vitae tincidunt id.
+                        </p>
+                    </div>
+
+                    <div className='border-1 rounded-md '>
+                        <h2 className='text-xl uppercase'>Cougar</h2>
+                        <img src={tecladoImage} className='rotate-350' alt="imagem de teclado" />
+                    </div>
+                </div>
         </section>
     </> : ''
     )
