@@ -4,6 +4,8 @@ import Home from './pages/Home.jsx'
 import Footer from './components/Footer.jsx'
 import Login from './components/Login.jsx'
 import { LoginContext } from './contexts/LoginContext.jsx'
+import { Route, Routes } from 'react-router-dom'
+import PlatformPage from './pages/PlatformPage.jsx'
 
 function App() {
   const [storeTitle, setStoreTitle] = useState("Neo Gaming");
@@ -17,7 +19,10 @@ function App() {
         <Navbar storeTitle={storeTitle} />
       </header>
       <main className='md:max-w-screen-sm xl:max-w-screen-xl'>
-        <Home/>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/:platform' element={<PlatformPage/>} />
+        </Routes>
       </main>
       <Footer/>
     </LoginContext.Provider>
